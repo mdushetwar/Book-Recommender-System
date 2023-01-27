@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommendation System</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<style>
+  .text-white{
+  color:white
+  }
+</style>
+
+<body style="background-color: #000000;">
+  <head>
+    <style>
+      /* Add styling for navigation bar */
+      .navbar {
+          background-color: yellow;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding: 0 30px;
+      }
+
+      /* Add styling for navigation links */
+      .navbar a {
+          color: purple;
+          text-decoration: none;
+          margin: 0 10px;
+          font-size: 15px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+      }
+
+      /* Add hover effect for navigation links */
+      .navbar a:hover {
+          color: black;
+          text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/recommend">Recommend</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </body>
+
+    </div>
+      <h1 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 3em; font-weight: 800; text-transform: uppercase; letter-spacing: 5px; color: white;margin-top:50px;">Book Recommender</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top:50px">
+          <h1 class="text-white" style="text-align: center; font-family: 'Papyrus', Fantasy; font-size: 2.2em; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; color: white;">Top 50 Books</h1>
+
+        </div>
+        {% for i in range(book_names| length)%}
+          <div class="col-md-3" style="margin-top:50px;">
+              <div class="card">
+                <div class="card-body">
+                  <img class="card-img-top" style="margin-left:80px" src="{{ images[i] }}">
+                  <p style="color: white; text-align: center; margin-top:30px">Author: {{ authors[i] }}</p>
+                  <p style="color: white; text-align: center">Votes: {{ votes[i] }}</p>
+                  <p style="color: white; text-align: center">Ratings: {{ ratings[i] }}</p>
+                </div>
+              </div>
+            </div>
+        {%endfor%}
+
+
+
+
+</body>
+</html>
